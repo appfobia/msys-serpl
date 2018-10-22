@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- import the webpage's stylesheet -->
+    
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Materials SERPL</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Files In/Out <span class="sr-only">(current)</span></a>
+      <!-- <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+    </div>
+  </div>
+</nav>
+    <header>
+      <h3 class="title">
+        Indian Oil Corporation Ltd
+      </h3>
+    </header>
+
+    <div class="container">
+      <div>
+        <h4 class="title">
+        Materials department
+      </h4>
+      <h5 class="title">
+        SERPL, Bhubaneshwar
+      </h5>
+      </div>
+      
+    <div class="container">
+      <div class="tab">
+        <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">List</a>
+        </li>
+      </ul>
+      </div>
+      <section id="main_data">
+      <div class="card">
+        <div class="card-header">
+          Files In/Out
+        </div>
+        <div class="card-body">               
+          <form id="inoutfileForm">
+            <div class="form-group row">
+              <div class="col-md-3">
+              <label for="fileNum">File No.</label>
+              <input id="fileNum" name="fileNum" class="form-control" type="text" size="20" maxlength="20" placeholder="enter file no" aria-labelledby="inoutfileForm submit-dream">
+              </div>
+              <div class="col-md-9">
+              <label for="fileName">Filename</label>
+              <input id="fileName" name="fileName" class="form-control" type="text" maxlength="100" placeholder="enter file name" aria-labelledby="inoutfileForm submit-dream">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-4">
+              <label for="receiveDate">Receive date</label>
+              <input id="receiveDate" name="receiveDate" class="form-control" type="date" aria-labelledby="inoutfileForm submit-dream">
+              </div>
+              <div class="col-md-4">
+              <label for="fileType">In/Out</label>
+              <select id="fileType" name="fileType" class="form-control">
+                <option value="In">In</option>
+                <option value="Out">Out</option>
+              </select>
+              </div>
+              <div class="col-md-4">
+              <label class="nodisplay"> r</label><br/>
+              <button type="submit" id="inout_btn" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+                <span id="alert_msg" class="row alert alert-success nodisplay">File added</span>
+          </form>
+        </div>
+      </div>
+      
+      </section>
+    </div>
+      
+      
+      <section class="filesData">
+        <ul id="file"></ul>
+      </section>
+    </div>
+    
+    <footer class="footer-no-nav">
+      <div class="container">
+        <span class="tex-muted">Made by Soham!</span>
+      </div>
+    </footer>
+  </body>
+</html>

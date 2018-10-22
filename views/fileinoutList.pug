@@ -1,0 +1,33 @@
+extends layout.pug
+
+block script
+ script(src="/fileinoutform.js" defer)
+
+
+block content
+
+ div.container
+  div.tab
+   ul(class="nav nav-pills justify-content-center")
+    li.nav-item
+     a(class="nav-link" href="#") Home
+    li.nav-item
+     a(class="nav-link active" href="#") List
+  
+  section#main_data
+   table.table
+    thead.thead-dark
+     tr
+      th(scope="col") #
+      th(scope="col") File no.
+      th(scope="col") File name
+      th(scope="col") Receive date
+      th(scope="col") In/Out
+    tbody
+      each row,index in list
+       tr
+        td= index+1
+        td= row.fileNum
+        td= row.fileName
+        td= row.receiveDate
+        td= row.fileType

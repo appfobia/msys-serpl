@@ -1,0 +1,17 @@
+/* styles */
+/* called by your view template */
+
+* {
+  box-sizing: border-box;
+}
+
+.title {
+ text-align:center;
+  
+}
+.nodisplay {
+  display:none;
+}
+.tab {
+ margin-bottom:10px; 
+}

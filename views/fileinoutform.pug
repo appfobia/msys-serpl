@@ -1,0 +1,62 @@
+extends layout.pug
+
+block script
+ script(src="/fileinoutform.js" defer)
+
+block content
+
+ div.container
+  div.tab
+   ul(class="nav nav-pills justify-content-center" role="tablist")
+    li.nav-item
+     a(class="nav-link active" data-toggle="pill" href="#form_data") Home
+    li.nav-item
+     a(class="nav-link" data-toggle="pill" href="#list_data") List
+  
+  div.tab-content
+    section.tab-pane.show.active#form_data(role="tabpanel")
+     div.card
+      div.card-header Files In/Out
+      div.card-body
+       form#inoutfileForm
+        div.form-group.row
+         div.col-md-3
+          label(for="fileNum") File No.
+          input(id="fileNum" name="fileNum" class="form-control" type="text" size="20" maxlength="20" placeholder="enter file no" aria-labelledby="inoutfileForm submit-dream")
+         div.col-md-9
+          label(for="fileName") Filename
+          input(id="fileName" name="fileName" class="form-control" type="text" maxlength="100" placeholder="enter file name" aria-labelledby="inoutfileForm submit-dream")
+        div.form-group.row
+         div.col-md-4
+          label(for="receiveDate") Receive date
+          input(id="receiveDate" name="receiveDate" class="form-control" type="date" aria-labelledby="inoutfileForm submit-dream")
+         div.col-md-4
+          label(for="fileType") In/Out
+          select(id="fileType" name="fileType" class="form-control")
+           option(value="In") In
+           option(value="Out") Out
+         div.col-md-4
+          label.nodisplay r
+          br
+          button(type="submit" id="inout_btn" class="btn btn-primary") Save
+        span(id="alert_msg" class="row alert alert-success nodisplay") File added 
+    section.tab-pane#list_data(role="tabpanel")
+     table.table
+      if list
+        thead.thead-dark
+         tr
+          th(scope="col") #
+          th(scope="col") File no.
+          th(scope="col") File name
+          th(scope="col") Receive date
+          th(scope="col") In/Out
+        tbody
+          each row,index in list
+           tr
+            td= index+1
+            td= row.fileNum
+            td= row.fileName
+            td= row.receiveDate
+            td= row.fileType
+      else
+       p Nothing to display
